@@ -21,3 +21,5 @@ print('Use the terminal to create a virtual environment for this cogs18 project.
 
 # If you are getting an error when installing numpy, you may need to install Microsoft C++ Build Tools.
 # You can download it from https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+# Use python 3.11 and pyinstaller to create an executable file for your project.
