@@ -701,12 +701,12 @@ class Piece():
             if (rw-1 >= 0) and (board[rw-1, cl] == 0):
                 allowed_moves[rw-1, cl] = 1
                 # If first spot in front is open, and pawn hasn't moved, and pawn is in row 2 or 7, also checks 2nd spot
-                if (rw-2 >= 0) and (board[rw-2, cl] == 0) and (self.moves == 0) and (rw == 1 or rw == 6):
+                if (rw-2 >= 0) and (board[rw-2, cl] == 0) and (self.moves == 0) and (rw == 6):
                     allowed_moves[rw-2, cl] = 1
         else:
             if (rw+1 <= 7) and (board[rw+1, cl] == 0):
                 allowed_moves[rw+1, cl] = 1
-                if (rw+2 <= 7) and (board[rw+2, cl] == 0) and (self.moves == 0) and (rw == 1 or rw == 6):
+                if (rw+2 <= 7) and (board[rw+2, cl] == 0) and (self.moves == 0) and (rw == 1):
                     allowed_moves[rw+2, cl] = 1
         return allowed_moves
     
