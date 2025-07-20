@@ -1,4 +1,4 @@
-# This file provides instructions on how to create a virdual environment for cogs18 projects that will contain all of the necessary packages.
+# This file provides instructions on how to create a virtual environment for cogs18 projects that will contain all of the necessary packages.
 # Run the following line to open the terminal window, or press ctrl + ` (backtick) to open the terminal in VS Code.
 print('Use the terminal to create a virtual environment for this cogs18 project.')
 
