@@ -68,13 +68,13 @@ queen_board = np.array([[0,0,0,bq1,0,0,bp1,bk],
                         [0,0,0,0,0,0,wp2,wp3],
                         [0,0,0,0,0,0,wp1,wk]])
 
-stale_board = np.array([[0,bq1, br2,0,0,0,0,bk],
+stale_board = np.array([[0,br2,0,0,0,0,0,bk],
                         [0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0],
                         [0,0,0,0,0,0,0,0],
-                        [0,0,0,0,0,0,0,br1],
+                        [0,0,bq1,0,0,0,0,br1],
                         [0,wk,0,0,0,0,0,0]])
 
 pawn_promo_board = np.array([[0,0,0,0,0,0,0,0],
@@ -104,11 +104,11 @@ en_passant_board = np.array([[0,0,0,0,bk,0,0,0],
                              [wp1,0,wp3,0,wp5,0,wp7,0],
                              [0,0,0,0,wk,0,0,0]])
 
-test_list = [[queen_board, 'w', "White's turn | Test board for queen movement"],
-               [stale_board, 'w', "White's turn | Test board for checkmate and stalemate"],
-               [pawn_promo_board,'w', "White's turn | Test board for pawn promotion"],
-               [castle_check_board, 'w', "White's turn | Test board for castling"],
-               [en_passant_board, 'w', "White's turn | Test board for En passant"]]
+test_list = [[queen_board, 'w', "White's turn | T1/5 Test board for queen movement"],
+               [stale_board, 'w', "White's turn | T2/5 Test board for checkmate and stalemate"],
+               [pawn_promo_board,'w', "White's turn | T3/5 Test board for pawn promotion"],
+               [castle_check_board, 'w', "White's turn | T4/5 Test board for castling"],
+               [en_passant_board, 'w', "White's turn | T5/5 Test board for En passant"]]
 
 gutman = np.array([[br1,bn1,0,bq1,0,br2,0,bk],
                   [0,0,bp3,bp4,0,0,0,0],

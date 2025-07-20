@@ -9,23 +9,36 @@ from my_variables import (start_board, reset_board, test_list, games_list,
 # current_board = np.array(current_board,dtype = object)
 
 current_board = start_board
+testing_index = 0 # This is used to keep track of the current test board
 
 # This determines whose turn it is
 white_moves = True
 
 
-def reset_board(set_board = [[reset_board, 'w', '']], board = current_board, screen = ''):
+def reset_board(set_board = [[reset_board, 'w', '']], board = current_board, screen = '', test_iter = False):
     """Resets the current board.
 
     Args:
         set_board(list): list with boards from which to choose from to reset to,
-                         color which is to move, and any info about the board.
+                         color which is to move, info about the board, and info on whether tests are being iterated through.
         board(numpy array): The board layout on which the piece resides.
         
     """
-    # Set the reset board
-    rand_board = random.choice(set_board)
-    board = rand_board[0]
+
+    # If test_iter is True, this will iterate through the test boards
+    global testing_index
+    if test_iter == True:
+        rand_board = set_board[testing_index]
+        if testing_index < len(set_board) - 1:
+            testing_index += 1
+        else:
+            testing_index = 0
+        board = rand_board[0]
+    else:
+        # Set the reset board
+        rand_board = random.choice(set_board)
+        board = rand_board[0]
+
     mover = rand_board[1]
     game_info = rand_board[2]
     current_board = board
@@ -339,7 +352,7 @@ def draw(board = current_board, disabled_buttons = False, screen = ''):
 
     testing_button = Button(text ='Tests', font = ('Arial', 10),
                             height = 4, width = 8,
-                          command = lambda games = test_list: reset_board(games))
+                          command = lambda games = test_list: reset_board(games, test_iter = True))
 
     reset_button.grid(row = 10, column = 7) # Adds the reset button
     shuffle_button.grid(row = 10, column = 6) # Adds the shuffle button
